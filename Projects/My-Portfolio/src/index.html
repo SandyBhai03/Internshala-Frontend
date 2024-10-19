@@ -1,0 +1,866 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="../css/style.css" rel="stylesheet">
+    <title>My Portfolio</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Initially hide the mobile menu */
+        #menu-toggle:not(:checked)~#mobile-menu {
+            display: none;
+        }
+
+        /* Show the mobile menu when the checkbox is checked */
+        #menu-toggle:checked~#mobile-menu {
+            display: block;
+        }
+
+        #image-view1:target,
+        #image-view2:target,
+        #image-view3:target,
+        #image-view4:target {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body id="body" class="font-nunito dark ">
+    <div class="min-h-screen bg-gradient-to-t from-indigo-400 to-indigo-600 dark:from-slate-800 dark:to-slate-900">
+        <!-- Navbar Section Start Here -->
+        <header>
+            <nav
+                class="w-full fixed top-0 bg-white dark:border-b dark:bg-slate-900 shadow-md z-50 transition-all duration-700 ease md:px-10 md:py-3 lg:py-1">
+                <!-- Added z-index -->
+                <div
+                    class="nav-container px-5 lg:px-10 py-3 flex justify-between items-center transition-all duration-700">
+                    <div
+                        class="flex items-center space-x-2 text-indigo-900 dark:text-indigo-100 text-xl font-extrabold">
+                        <img class="w-8 object-center rounded" src="../images/logo.png" alt="">
+                        <span class="text-xl md:text-3xl lg:text-2xl font-extrabold">Sandeep Yadav</span>
+                    </div>
+                    <ul
+                        class="navlinks hidden lg:flex space-x-8 text-gray-600 dark:text-white font-extrabold text-base uppercase">
+                        <li class="hover:text-indigo-700 transition duration-300"><a href="#">Home</a></li>
+                        <li class="hover:text-indigo-700 transition duration-300"><a href="#about">About</a></li>
+                        <li class="hover:text-indigo-700 transition duration-300"><a href="#skills">Skills</a></li>
+                        <li class="hover:text-indigo-700 transition duration-300"><a
+                                href="#certificates">Certificates</a>
+                        </li>
+                        <li class="hover:text-indigo-700 transition duration-300"><a href="#projects">Projects</a></li>
+                        <li class="hover:text-indigo-700 transition duration-300"><a href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="flex gap-5 md:gap-7">
+                        <!-- Moon image -->
+                        <a id="dark-mode" href="#">
+                            <i class="dark:text-slate-100 text-bg-yellow-500 text-2xl font-bold fa-regular fa-moon"></i>
+                        </a>
+                        <!-- Hamburger icon -->
+                        <div class="space-y-1 dark:text-slate-100 lg:hidden cursor-pointer">
+                            <label for="menu-toggle">
+                                <i class="text-xl md:text-2xl fa-solid fa-bars"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Hidden checkbox for menu toggle -->
+                <input type="checkbox" id="menu-toggle" class="hidden">
+
+                <!-- Mobile Menu (shown/hidden based on checkbox) -->
+                <div id="mobile-menu"
+                    class=" mobile-navlinks md:hidden z-1 px-5 pt-2 pb-3 text-center space-y-2 transition-all duration-500  dark:text-slate-100 text-gray-600 font-bold text-md uppercase hidden">
+                    <a href="#" class="block hover:text-indigo-700 transition duration-300">Home</a>
+                    <a href="#about" class="block hover:text-indigo-700 transition duration-300">About</a>
+                    <a href="#skills" class="block hover:text-indigo-700 transition duration-300">Skills</a>
+                    <a href="#certificates" class="block hover:text-indigo-700 transition duration-300">Certificates</a>
+                    <a href="#projects" class="block hover:text-indigo-700 transition duration-300">Projects</a>
+                    <a href="#contact" class="block hover:text-indigo-700 transition duration-300">Contact</a>
+                </div>
+            </nav>
+        </header>
+        <!-- Navbar Section End Here -->
+
+        <!-- Intro Content Start Here -->
+        <main
+            class=" z-50 py-24 lg:py-12 bg-gradient-to-r from-indigo-200 to-indigo-500 dark:from-slate-800 dark:to-slate-900 px-3 md:px-10 lg:px-20">
+            <section id="home" class="h-screen intro flex flex-col lg:flex-row md:justify-around md:items-center">
+                <div class="flex flex-col gap-2 md:gap-4 md:w-2/3">
+                    <p class="text-2xl md:text-3xl font-extrabold text-indigo-400 dark:text-slate-100">I am Sandeep</p>
+                    <p
+                        class="text-3xl md:text-5xl font-extrabold md:w-1/2 text-nowrap bg-gradient-to-l text-indigo-600 dark:bg-slate-900 dark:text-slate-100 ">
+                        Web Developer+</p>
+                    <p
+                        class="text-nowrap text-3xl md:text-5xl font-extrabold md:w-1/2 bg-gradient-to-r text-indigo-600 dark:text-slate-100">
+                        UX Designer</p>
+                    <p class="text-wrap text-lg md:text-2xl font-bold text-gray-600 dark:text-gray-100 mb-1">a web
+                        developer focused on
+                        building
+                        responsive and engaging websites. Let’s bring your ideas to life with clean, efficient code!</p>
+                    <div class="flex gap-2 md:gap-4 md:my-6 lg:justify-start">
+                        <button
+                            class="w-fit hover:text-indigo-600 font-bold bg-indigo-600 text-xs text-white hover:bg-transparent transition-all duration-500 ease-linear border-2 border-indigo-600 rounded-3xl px-2 md:text-sm md:px-5">
+                            Download CV <i class="fa-solid fa-download"></i>
+                        </button>
+                        <!-- social icons -->
+                        <!-- linkedin -->
+                        <a href="https://www.linkedin.com/in/sandeepyadav03/" target="_blank">
+                            <span>
+                                <i
+                                    class="flex items-center justify-center h-12 w-12 rounded-full border-2 border-indigo-600 text-indigo-600 text-xl font-thin hover:bg-indigo-600 hover:text-white transition-all duration-500 ease-linear  fa-brands fa-linkedin-in"></i>
+                            </span>
+                        </a>
+                        <!-- instagran -->
+                        <a href="https://www.instagram.com/sandybhai0003/" target="_blank">
+                            <span>
+                                <i
+                                    class="flex items-center justify-center h-12 w-12 rounded-full border-2 border-indigo-600 text-indigo-600 text-xl font-thin hover:bg-indigo-600 hover:text-white transition-all duration-500 ease-linear fa-brands fa-instagram"></i>
+                            </span>
+                        </a>
+                        <!-- facebook -->
+                        <a href="https://www.facebook.com/profile.php?id=100038437879933" target="_blank">
+                            <span>
+                                <i
+                                    class="flex items-center justify-center h-12 w-12 rounded-full border-2 border-indigo-600 text-indigo-600 text-xl font-thin hover:bg-indigo-600 hover:text-white transition-all duration-500 ease-linear fa-brands fa-facebook-f"></i>
+                            </span>
+                        </a>
+                        <!-- Twitter -->
+                        <a href="https://x.com/samrat_king0003" target="_blank">
+                            <span>
+                                <i
+                                    class="flex items-center justify-center h-12 w-12 rounded-full border-2 border-indigo-600 text-indigo-600 text-xl font-thin hover:bg-indigo-600 hover:text-white transition-all duration-500 ease-linear fa-brands fa-twitter"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <!-- image container -->
+                <div class=" pt-6">
+                    <img class="w-64 h-[40vh] md:w-96 lg:w-80 lg:h-[50vh] mx-auto rotate-3 hover:rotate-0 rounded-3xl object-center transition duration-500 shadow-[0px_0px_25px_rgb(75,0,150)] hover:scale-105 border-2 border-indigo-300"
+                        src="https://i.pinimg.com/236x/01/57/64/015764cd897425eef2209a73ac008d0e.jpg" alt="">
+                </div>
+            </section>
+            <!-- Intro Content End Here -->
+
+            <!-- About Section Start Here -->
+            <section id="about" class=" dark:bg-slate-900  rounded-lg m-h-screen flex justify-center md:mt-12 mt-3">
+                <article
+                    class=" w-full border-[1px] lg:border-[2px] bg-gradient-to-t from-indigo-400 dark:bg-slate-900  dark:from-slate-800 dark:to-slate-900 dark:border-slate-200 dark:border-[1px] dark:lg:border-[2px] dark:shadow-lg border-indigo-400 py-5 px-3 md:px-8 rounded shadow-md shadow-slate-500 hover:shadow-lg hover:scale-[1.01] transition-all duration-500">
+                    <h2 class="w-fit text-gray-800 text-5xl bg-gradient-to-l dark:text-slate-100 font-extrabold px-10">
+                        About <span class="text-indigo-600 dark:text-slate-300">Me</span>
+                    </h2>
+                    <div
+                        class="flex flex-col lg:flex-row gap-4 dark:bg-transparent md:gap-10 justify-center lg:justify-between items-center mt-5 lg:mb-10">
+                        <div class="flex justify-center gap-2 dark:bg-transparent md:p-2 w-full lg:m-12">
+                            <p
+                                class="w-full text-wrap text-xl lg:text-5xl xl:text-6xl bg-gradient-to-b dark:bg-none dark:text-slate-300 hover:shadow-lg hover:scale-95 shadow-indigo-400 transition duration-500 md:text-4xl font-bold text-gray-700 py-5 lg:py-4 px-1 rounded text-center">
+                                My interest is
+                                learning new technology and solving various problems
+                            </p>
+                        </div>
+                        <div class="w-full">
+                            <img class="md:w-full lg:w-[90%] object-cover rounded-lg mx-auto transition duration-500 hover:scale-[1.02] hover:shadow-lg hover:shadow-gray-950"
+                                src="https://i.pinimg.com/736x/24/68/a1/2468a19e048308eabf19eabc4a2ce7a7.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:justify-around gap-3 mt-5 lg:px-10">
+                        <p
+                            class="text-sm md:text-lg font-normal md:w-2/3 md:font-bold lg:text-xl text-gray-600 dark:text-slate-200 lg:px-5 py-5">
+                            Hi, I'm Sandeep Yadav, a passionate software engineer with a strong focus on building
+                            efficient, scalable, and user-friendly applications. With a deep interest in both front-end
+                            and back-end technologies, I enjoy crafting solutions that not only solve problems but also
+                            provide a seamless user experience.
+                        </p>
+                        <div
+                            class="grid grid-cols-2 bg-indigo-400 dark:bg-slate-800 dark:border-slate-100 border-[1px] border-gray-400 md:w-2/5 p-2 rounded shadow-white shadow-md hover:shadow-xl grid-rows-2 gap-3 font-bold items-center text-center text-gray-600">
+                            <div
+                                class="col-start-1 col-end-3 text-gray-600 dark:bg-slate-200 dark:hover:bg-indigo-500 text-xl text-center font-bold border-[1px] border-gray-500 rounded shadow-md hover:bg-indigo-500 hover:text-white transition duration-300 ">
+                                Interest
+                            </div>
+                            <div
+                                class="font-bold border-[1px] border-gray-500 dark:text-slate-300 rounded shadow-md hover:bg-indigo-500 hover:text-white transition duration-300">
+                                Software Engineer
+                            </div>
+                            <div
+                                class="font-bold border-[1px] border-gray-500 dark:text-slate-300 rounded hover:bg-indigo-500 hover:text-white transition duration-300">
+                                Full Stack Developer
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+            </section>
+            <!-- About Section End Here -->
+
+            <!-- Skills Section Start Here -->
+            <section id="skills" class="w-full min-h-screen xl:min-h-fit xl:py-6 skills-section mt-16">
+                <h1
+                    class="text-3xl md:text-4xl font-extrabold text-center py-5 text-indigo-700 dark:text-slate-200 m-3">
+                    My
+                    Skills</h1>
+                <div class="flex flex-col lg:flex-row gap-16">
+                    <article
+                        class="w-full lg:w-1/2 bg-gradient-to-b border-x-2 border-indigo-400 dark:border-slate-200 dark:border-[2px] dark:hover:shadow-white py-5 rounded-lg px-5 hover:bg-indigo-500 hover:scale-[1.02] hover:shadow-lg transition duration-500 shadow-md">
+                        <div class="py-1">
+                            <div class="flex justify-between w-[90%] py-1">
+                                <h2 class=" text-lg text-gray-800 dark:text-slate-100 font-bold">HTML</h2>
+                                <p
+                                    class="font-semibold rounded px-2 flex items-center justify-center bg-[rgba(211,211,211,0.40)] hover:bg-gray-400 transition duration-500">
+                                    90%</p>
+                            </div>
+                            <div class="w-full h-3 bg-[rgb(241,241,241)] border-none rounded-full overflow-hidden">
+                                <div class="inline-block w-[90%] bg-green-500 font-bold text-center">.</div>
+                            </div>
+                        </div>
+                        <div class="py-2">
+                            <div class="flex justify-between w-[86%] py-1">
+                                <h2 class=" text-lg text-gray-800  dark:text-slate-100 font-bold">CSS</h2>
+                                <p
+                                    class="font-semibold rounded px-2 flex items-center justify-center bg-[rgba(211,211,211,0.40)] hover:bg-gray-400 transition duration-500">
+                                    86%</p>
+                            </div>
+                            <div class="w-full h-3 bg-[rgb(241,241,241)] border-none rounded-full overflow-hidden">
+                                <div class="inline-block w-[86%] bg-green-500 font-bold text-center">.</div>
+                            </div>
+                        </div>
+                        <div class="py-2">
+                            <div class="flex justify-between w-[80%] py-1">
+                                <h2 class=" text-lg text-gray-800 dark:text-slate-100 font-bold">Javascript</h2>
+                                <p
+                                    class="font-semibold rounded px-2 flex items-center justify-center bg-[rgba(211,211,211,0.40)] hover:bg-gray-400 transition duration-500">
+                                    80%</p>
+                            </div>
+                            <div class="w-full h-3 bg-[rgb(241,241,241)] border-none rounded-full overflow-hidden">
+                                <div class="inline-block w-[80%] bg-green-500 font-bold text-center">.</div>
+                            </div>
+                        </div class="py-2">
+                        <div>
+                            <div class="flex justify-between w-[70%] py-1">
+                                <h2 class=" text-lg text-gray-800 dark:text-slate-100 font-bold">ReactJS</h2>
+                                <p
+                                    class="font-semibold rounded px-2 flex items-center justify-center bg-[rgba(211,211,211,0.40)] hover:bg-gray-400 transition duration-500">
+                                    70%</p>
+                            </div>
+                            <div class="w-full h-3 bg-[rgb(241,241,241)] border-none rounded-full overflow-hidden">
+                                <div class="inline-block w-[70%] bg-green-500 font-bold text-center">.</div>
+                            </div>
+                        </div>
+                        <div class="py-2">
+                            <div class="flex justify-between w-[75%] py-1">
+                                <h2 class=" text-lg text-gray-800 dark:text-slate-100 font-bold">Java</h2>
+                                <p
+                                    class="font-semibold rounded px-2 flex items-center justify-center bg-[rgba(211,211,211,0.40)] hover:bg-gray-400 transition duration-500">
+                                    75%</p>
+                            </div>
+                            <div class="w-full h-3 bg-[rgb(241,241,241)] border-none rounded-full overflow-hidden">
+                                <div class="inline-block w-[75%] bg-green-500 font-bold text-center">.</div>
+                            </div>
+                        </div>
+                        <div class="py-2">
+                            <div class="flex justify-between w-[50%] py-1">
+                                <h2 class=" text-lg text-gray-800 dark:text-slate-100 font-bold">DSA</h2>
+                                <p
+                                    class="font-semibold rounded px-2 flex items-center justify-center bg-[rgba(211,211,211,0.40)] hover:bg-gray-400 transition duration-500">
+                                    50%</p>
+                            </div>
+                            <div class="w-full h-3 bg-[rgb(241,241,241)] border-none rounded-full overflow-hidden">
+                                <div class="inline-block w-[50%] bg-green-500 font-bold text-center">.</div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- other skills-section -->
+                    <article class="w-full lg:w-1/2 grid grid-cols-2 gap-y-6 grid-rows-2">
+                        <div class="flex flex-col justify-center items-center">
+                            <div
+                                class="relative w-28 h-28 md:h-36 md:w-36 flex items-center justify-center border-[3px] border-indigo-500 shadow-md hover:shadow-lg hover:-rotate-45 hover:scale-[1.05] transition duration-500 rounded-full bg-gray-200">
+                                <div class="absolute inset-0 rounded-full bg-white"
+                                    style="background: conic-gradient(#3b82f6 0% 75%, #e5e7eb 75%);">
+                                </div>
+                                <span class="absolute text-xl font-bold text-gray-900">75%</span>
+                            </div>
+                            <h3 class="text-gray-900  dark:text-slate-100 font-bold">Team Work</h3>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <div
+                                class="relative w-28 h-28 md:h-36 md:w-36 flex items-center justify-center border-[3px] border-indigo-500 shadow-md hover:shadow-lg hover:-rotate-45 hover:scale-[1.05] transition duration-500 rounded-full bg-gray-200">
+                                <div class="absolute inset-0 rounded-full bg-white"
+                                    style="background: conic-gradient(#3b82f6 0% 80%, #e5e7eb 75%);">
+                                </div>
+                                <span class="absolute text-xl font-bold text-gray-900">80%</span>
+                            </div>
+                            <h3 class="text-gray-900 dark:text-slate-100 font-bold">Creativity</h3>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <div
+                                class="relative w-28 h-28 md:h-36 md:w-36 flex items-center justify-center border-[3px] border-indigo-500 shadow-md hover:shadow-lg hover:-rotate-45 hover:scale-[1.05] transition duration-500 rounded-full bg-gray-200">
+                                <div class="absolute inset-0 rounded-full bg-white"
+                                    style="background: conic-gradient(#3b82f6 0% 90%, #e5e7eb 90%);">
+                                </div>
+                                <span class="absolute text-xl font-bold text-gray-900">90%</span>
+                            </div>
+                            <h3 class="text-gray-900 dark:text-slate-100 font-bold">Problem Solving</h3>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <div
+                                class="relative w-28 h-28 md:h-36 md:w-36 flex items-center justify-center border-[3px] border-indigo-500 shadow-md hover:shadow-lg hover:-rotate-45 hover:scale-[1.05]  transition duration-500 rounded-full bg-gray-200">
+                                <div class="absolute inset-0 rounded-full bg-white"
+                                    style="background: conic-gradient(#3b82f6 0% 65%, #e5e7eb 65%);">
+                                </div>
+                                <span class="absolute text-xl font-bold text-gray-900">65%</span>
+                            </div>
+                            <h3 class="text-gray-900 dark:text-slate-100 font-bold">Communication</h3>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!-- Skills Section End Here -->
+
+            <!-- Cirtificates Section Start Here -->
+            <article id="certificates" class="w-full py-6 px-3 lg:px-0">
+                <h2
+                    class="text-3xl px-5 lg:text-center md:text-4xl lg:text-4xl font-extrabold  dark:text-slate-300 text-indigo-800 py-5">
+                    <span class="text-gray-800  dark:text-slate-100">My</span>
+                    Cirtificates
+                </h2>
+                <!-- Cirtificate Cards -->
+                <div
+                    class="h-fit cards-container px-5 lg:px-0 grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 xl:grid-cols-4 text-center lg:grid-rows-1 gap-5">
+                    <!-- Card 1 -->
+                    <div
+                        class="h-[21rem] md:h-[25rem] lg:h-[26rem] hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white rounded-lg ">
+                        <div class="h-full  w-full bg-[rgba(45,0,75,0.22)] dark:bg-slate-700 px-3 py-3 rounded-lg">
+                            <div class="rounded overflow-x-hidden w-full h-full transition-all duration-300 ">
+                                <img class="w-full h-1/2 object-cover" src="../images/certificate-1.jpg" alt="">
+                                <div
+                                    class="w-full h-1/2 z-10 bg-[rgba(45,0,75,0.22)] dark:slate-700 text-center flex flex-col items-center justify-center gap-2">
+                                    <p class="text-gray-200 text-base font-semibold">Data Structure & Algorithm</p>
+                                    <a href="#image-view1">
+                                        <button
+                                            class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-lg shadow-md font-semibold text-gray-100 px-5 py-1">
+                                            View Cirtificate
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="h-[21rem] md:h-[25rem] lg:h-[26rem] hover:shadow-xl transform hover:scale-[1.02] rounded-lg transition-all duration-300 hover:shadow-white ">
+                        <div class="h-full  w-full bg-[rgba(45,0,75,0.22)] dark:bg-slate-700 px-3 py-3 rounded-lg">
+                            <div class="rounded overflow-x-hidden w-full h-full transition-all duration-300 ">
+                                <img class="w-full h-1/2 object-cover" src="../images/certificate-2.jpg" alt="">
+                                <div
+                                    class="w-full h-1/2 z-10 bg-[rgba(45,0,75,0.22)] text-center flex flex-col items-center justify-center gap-2">
+                                    <p class="text-gray-200 text-base font-semibold">Internshala Course-1 Test</p>
+                                    <a href="#image-view2">
+                                        <button
+                                            class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-lg shadow-md font-semibold text-gray-100 px-5 py-1">
+                                            View Cirtificate
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="h-[21rem] md:h-[25rem] lg:h-[26rem] hover:shadow-xl transform hover:scale-[1.02] rounded-lg transition-all duration-300 hover:shadow-white ">
+                        <div class="h-full  w-full bg-[rgba(45,0,75,0.22)] dark:bg-slate-700 px-3 py-3 rounded-lg">
+                            <div class="rounded overflow-x-hidden w-full h-full transition-all duration-300 ">
+                                <img class="w-full h-1/2 object-cover" src="../images/certificate-3.jpg" alt="">
+                                <div
+                                    class="w-full h-1/2 z-10 bg-[rgba(45,0,75,0.22)] text-center flex flex-col items-center justify-center gap-2">
+                                    <p class="text-gray-200 text-base font-semibold">Certificate of Mahindra Pride
+                                        Classes</p>
+                                    <a href="#image-view3">
+                                        <button
+                                            class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-lg shadow-md font-semibold text-gray-100 px-5 py-1">
+                                            View Cirtificate
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="h-[21rem] md:h-[25rem] lg:h-[26rem] hover:shadow-xl transform hover:scale-[1.02] rounded-lg transition-all duration-300 hover:shadow-white ">
+                        <div class="h-full  w-full bg-[rgba(45,0,75,0.22)] dark:bg-slate-700 px-3 py-3 rounded-lg">
+                            <div class="rounded overflow-x-hidden w-full h-full transition-all duration-300 ">
+                                <img class="w-full h-1/2 object-cover" src="../images/certificate-4.jpeg" alt="">
+                                <div
+                                    class="w-full h-1/2 z-10 bg-[rgba(45,0,75,0.22)] text-center flex flex-col items-center justify-center gap-2">
+                                    <p class="text-gray-200 text-base font-semibold">Ducat Java Full Stack and Frontend
+                                    </p>
+                                    <a href="#image-view4">
+                                        <button
+                                            class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-lg shadow-md font-semibold text-gray-100 px-5 py-1">
+                                            View Cirtificate
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Full View for Image 1 -->
+                <div id="image-view1"
+                    class="fixed inset-0 hidden bg-black bg-opacity-80 items-center justify-center z-50">
+                    <a href="##certificates" class="absolute top-5 right-10 text-white text-4xl">&times;</a>
+                    <img src="../images/certificate-1.jpg" alt="Full Image 1"
+                        class="max-w-90 max-h-90 lg:max-w-96 lg:max-h-96 shadow-xl">
+                </div>
+
+                <!-- Full View for Image 2 -->
+                <div id="image-view2"
+                    class="fixed inset-0 hidden bg-black bg-opacity-80 items-center justify-center z-50">
+                    <a href="#certificates" class="absolute top-5 right-10 text-white text-4xl">&times;</a>
+                    <img src="../images/certificate-2.jpg" alt="Full Image 2"
+                        class="max-w-90 max-h-90 lg:max-w-96 lg:max-h-96 shadow-xl">
+                </div>
+
+                <!-- Full View for Image 3 -->
+                <div id="image-view3"
+                    class="fixed inset-0 hidden bg-black bg-opacity-80 items-center justify-center z-50">
+                    <a href="##certificates" class="absolute top-5 right-10 text-white text-4xl">&times;</a>
+                    <img src="../images/certificate-3.jpg" alt="Full Image 3" class="max-w-90 max-h-90 shadow-xl">
+                </div>
+                <!-- Full View for Image 4 -->
+                <div id="image-view4"
+                    class="fixed inset-0 hidden bg-black bg-opacity-80 items-center justify-center z-50">
+                    <a href="##certificates" class="absolute top-5 right-10 text-white text-4xl">&times;</a>
+                    <img src="../images/certificate-1.jpg" alt="Full Image 3" class="max-w-96 max-h-96 shadow-xl">
+                </div>
+            </article>
+            <!-- Cirtificates Section End Here -->
+
+            <!-- Projects Section Start Here -->
+
+            <section class=" py-7">
+                <article id="projects">
+                    <h2
+                        class="text-3xl px-5 lg:text-center md:text-4xl lg:text-4xl font-extrabold text-indigo-800 dark:text-slate-300 py-5 mb-3">
+                        <span class="text-gray-800 dark:text-slate-200">Latest</span>
+                        Projects
+                    </h2>
+                    <!-- Project Cards -->
+                    <div
+                        class="h-fit cards-container px-5 lg:px-0 grid row-gap-8 grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 text-center md:place-items-center lg:grid-rows-1 gap-5 xl:gap-12">
+                        <!-- Card 1 -->
+                        <div
+                            class="h-fit  w-full bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(25,25,25,0.22)] dark:hover:bg-slate-600 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white px-3 py-3 rounded-lg">
+                            <div class="h-full rounded overflow-x-hidden w-full transition-all duration-300 ">
+                                <img class="w-full h-[12rem] md:h-[15rem] lg:h-[16rem] object-cover"
+                                    src="../images/avengers.jpeg" alt="">
+                                <div
+                                    class="w-full h-[12rem] z-10 bg-[rgba(45,0,75,0.42)] text-center flex flex-col items-start justify-between gap-2 py-5 px-5">
+                                    <p class="text-gray-200 text-lg font-bold">Avengers Project</p>
+                                    <p class="text-start w-full text-gray-300">It's Avengers introduction project. In
+                                        this
+                                        project i am telling about the avenger.</p>
+                                    <div class="w-full flex justify-center items-center gap-3">
+                                        <a href="https://github.com/SandyBhai03/CSS-Projects/tree/main/Avengers"
+                                            target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 lg:px-4 py-1">
+                                                View on GitHub
+                                            </button>
+                                        </a>
+                                        <a href="../images/avengers.jpeg" target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 py-1">
+                                                Live Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div
+                            class="h-fit  w-full bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(25,25,25,0.22)] dark:hover:bg-slate-600 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white px-3 py-3 rounded-lg">
+                            <div class="h-full rounded overflow-x-hidden w-full transition-all duration-300 ">
+                                <img class="w-full h-[12rem] md:h-[15rem] lg:h-[16rem] object-cover"
+                                    src="../images/blog.png" alt="">
+                                <div
+                                    class="w-full h-[12rem] z-10 bg-[rgba(45,0,75,0.42)] text-center flex flex-col items-start justify-between gap-2 py-5 px-5">
+                                    <p class="text-gray-200 text-lg font-bold">My Travel Blog</p>
+                                    <p class="text-start w-full text-gray-300">
+                                        In this blog i am my travel experiences and shares popupar places of these
+                                        country.
+                                    </p>
+                                    <div class="w-full flex justify-center items-center gap-3">
+                                        <a href="https://github.com/SandyBhai03/CSS-Projects/tree/main/Avengers"
+                                            target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 lg:px-4 py-1">
+                                                View on GitHub
+                                            </button>
+                                        </a>
+                                        <a href="../images/blog.png" target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 py-1">
+                                                Live Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div
+                            class="h-fit  w-full bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(25,25,25,0.22)] dark:hover:bg-slate-600 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white px-3 py-3 rounded-lg">
+                            <div class="h-full rounded overflow-x-hidden w-full transition-all duration-300 ">
+                                <img class="w-full h-[12rem] md:h-[15rem] lg:h-[16rem] object-cover"
+                                    src="../images/youtube-clone.png" alt="">
+                                <div
+                                    class="w-full h-[12rem] z-10 bg-[rgba(45,0,75,0.42)] text-center flex flex-col items-start justify-between gap-2 py-5 px-5">
+                                    <p class="text-gray-200 text-lg font-bold">Youtube Frontend Clone</p>
+                                    <p class="text-start w-full text-gray-300">
+                                        In this Project i create a youtube-clone frontend part designing.
+                                    </p>
+                                    <div class="w-full flex justify-center items-center gap-3">
+                                        <a href="https://github.com/SandyBhai03/CSS-Projects/tree/main/Avengers"
+                                            target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 lg:px-4 py-1">
+                                                View on GitHub
+                                            </button>
+                                        </a>
+                                        <a href="../images/youtube-clone.png" target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 py-1">
+                                                Live Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div
+                            class="h-fit  w-full bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(25,25,25,0.22)] dark:hover:bg-slate-600 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white px-3 py-3 rounded-lg">
+                            <div class="h-full rounded overflow-x-hidden w-full transition-all duration-300 ">
+                                <img class="w-full h-[12rem] md:h-[15rem] lg:h-[16rem] object-center"
+                                    src="../images/recipe-app.png" alt="">
+                                <div
+                                    class="w-full h-[12rem] z-10 bg-[rgba(45,0,75,0.42)] text-center flex flex-col items-start justify-between gap-2 py-5 px-5">
+                                    <p class="text-gray-200 text-lg font-bold">Recipe App</p>
+                                    <p class="text-start w-full text-gray-300">
+                                        In this Project we can search any food items if item is present then visible on
+                                        thn screen.
+                                    </p>
+                                    <div class="w-full flex justify-center items-center gap-3">
+                                        <a href="https://github.com/SandyBhai03/CSS-Projects/tree/main/Avengers"
+                                            target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 lg:px-4 py-1">
+                                                View on GitHub
+                                            </button>
+                                        </a>
+                                        <a href="../images/recipe-app.png" target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 py-1">
+                                                Live Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div
+                            class="h-fit  w-full bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(25,25,25,0.22)] dark:hover:bg-slate-600 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white px-3 py-3 rounded-lg">
+                            <div class="h-full rounded overflow-x-hidden w-full transition-all duration-300 ">
+                                <img class="w-full h-[12rem] md:h-[15rem] lg:h-[16rem] object-center"
+                                    src="../images/rejouice.png" alt="">
+                                <div
+                                    class="w-full h-[12rem] z-10 bg-[rgba(45,0,75,0.42)] text-center flex flex-col items-start justify-between gap-2 py-5 px-5">
+                                    <p class="text-gray-200 text-lg font-bold">Rejouice Animated Website</p>
+                                    <p class="text-start w-full text-gray-300">
+                                        This is fully animated website. In this website i used GSAP for animation
+                                    </p>
+                                    <div class="w-full flex justify-center items-center gap-3">
+                                        <a href="https://github.com/SandyBhai03/CSS-Projects/tree/main/Avengers"
+                                            target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 lg:px-4 py-1">
+                                                View on GitHub
+                                            </button>
+                                        </a>
+                                        <a href="../images/rejouice.png" target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 py-1">
+                                                Live Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 6 -->
+                        <div
+                            class="h-fit  w-full bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(25,25,25,0.22)] dark:hover:bg-slate-600 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white px-3 py-3 rounded-lg">
+                            <div class="h-full rounded overflow-x-hidden w-full transition-all duration-300 ">
+                                <img class="w-full h-[12rem] md:h-[15rem] lg:h-[16rem] object-cover"
+                                    src="../images/digital-clock.png" alt="">
+                                <div
+                                    class="w-full h-[12rem] z-10 bg-[rgba(45,0,75,0.42)] text-center flex flex-col items-start justify-between gap-2 py-5 px-5">
+                                    <p class="text-gray-200 text-lg font-bold">Digital Clock</p>
+                                    <p class="text-start w-full text-gray-300">
+                                        In this project i created a digital clock using HTML CSS and Javascript
+                                    </p>
+                                    <div class="w-full flex justify-center items-center gap-3">
+                                        <a href="https://github.com/SandyBhai03/CSS-Projects/tree/main/Avengers"
+                                            target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 lg:px-4 py-1">
+                                                View on GitHub
+                                            </button>
+                                        </a>
+                                        <a href="../images/digital-clock.png" target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 py-1">
+                                                Live Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 7 -->
+                        <div
+                            class="h-fit  w-full bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(25,25,25,0.22)] dark:hover:bg-slate-600 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white px-3 py-3 rounded-lg">
+                            <div class="h-full rounded overflow-x-hidden w-full transition-all duration-300 ">
+                                <img class="w-full h-[12rem] md:h-[15rem] lg:h-[16rem] object-cover"
+                                    src="../images/currency-converter.png" alt="">
+                                <div
+                                    class="w-full h-[12rem] z-10 bg-[rgba(45,0,75,0.42)] text-center flex flex-col items-start justify-between gap-2 py-5 px-5">
+                                    <p class="text-gray-200 text-lg font-bold">Currency Converter </p>
+                                    <p class="text-start w-full text-gray-300">
+                                        Currency Converter using HTML, CSS and Javascript for convert all the currency.
+                                    </p>
+                                    <div class="w-full flex justify-center items-center gap-3">
+                                        <a href="https://github.com/SandyBhai03/CSS-Projects/tree/main/Avengers"
+                                            target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 lg:px-4 py-1">
+                                                View on GitHub
+                                            </button>
+                                        </a>
+                                        <a href="../images/currency-converter.png" target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 py-1">
+                                                Live Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 8 -->
+                        <div
+                            class="h-fit  w-full bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(25,25,25,0.22)] dark:hover:bg-slate-600 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white px-3 py-3 rounded-lg">
+                            <div class="h-full rounded overflow-x-hidden w-full transition-all duration-300 ">
+                                <img class="w-full h-[12rem] md:h-[15rem] lg:h-[16rem] object-cover"
+                                    src="../images/todo-app.png" alt="">
+                                <div
+                                    class="w-full h-[12rem] z-10 bg-[rgba(45,0,75,0.42)] text-center flex flex-col items-start justify-between gap-2 py-5 px-5">
+                                    <p class="text-gray-200 text-lg font-bold">Todo App</p>
+                                    <p class="text-start w-full text-gray-300">It's Avengers introduction project. In
+                                        this
+                                        project i am telling about the avenger.</p>
+                                    <div class="w-full flex justify-center items-center gap-3">
+                                        <a href="https://github.com/SandyBhai03/CSS-Projects/tree/main/Avengers"
+                                            target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 lg:px-4 py-1">
+                                                View on GitHub
+                                            </button>
+                                        </a>
+                                        <a href="../images/todo-app.png" target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 py-1">
+                                                Live Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 9 -->
+                        <div
+                            class="h-fit  w-full bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(25,25,25,0.22)] dark:hover:bg-slate-600 hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-white px-3 py-3 rounded-lg">
+                            <div class="h-full rounded overflow-x-hidden w-full transition-all duration-300 ">
+                                <img class="w-full h-[12rem] md:h-[15rem] lg:h-[16rem] object-cover"
+                                    src="../images/image-slider.png" alt="">
+                                <div
+                                    class="w-full h-[12rem] z-10 bg-[rgba(45,0,75,0.42)] text-center flex flex-col items-start justify-between gap-2 py-5 px-5">
+                                    <p class="text-gray-200 text-lg font-bold">Image Slider</p>
+                                    <p class="text-start w-full text-gray-300">Image Slider using HTML,CSS and
+                                        Javascript. In this project we can slides the images.</p>
+                                    <div class="w-full flex justify-center items-center gap-3">
+                                        <a href="https://github.com/SandyBhai03/CSS-Projects/tree/main/Avengers"
+                                            target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 lg:px-4 py-1">
+                                                View on GitHub
+                                            </button>
+                                        </a>
+                                        <a href="../images/image-slider.png" target="_blank">
+                                            <button
+                                                class="bg-gradient-to-t bg-[rgba(45,0,75,0.22)] hover:bg-indigo-600 hover:text-indigo-300 rounded text-sm shadow-md xl:text-base font-semibold text-gray-100 px-3 py-1">
+                                                Live Demo
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- Projects Section End Here -->
+
+            <!-- Contact Section Start Here -->
+            <section id="contact"
+                class=" bg-gradient-to-l border-[2px] border-indigo-400 bg-indigo-500 dark:bg-slate-900 dark:border-[1px] dark:lg:border-[2px] dark:hover:shadow-white transition duration-300 ease-in rounded-lg shadow-md text-gray-100 py-12 px-4 mt-5 lg:mt-14">
+                <div class="max-w-7xl mx-auto">
+                    <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
+
+                    <div class="flex flex-col md:flex-row justify-between gap-8">
+                        <!-- Contact Information -->
+                        <div class="md:w-1/2 flex flex-col justify-center gap-4">
+                            <p class="text-lg md:text-xl lg:text-2xl font-bold dark:text-slate-200 text-indigo-900">
+                                Feel free to reach out if you have any questions or just want to connect.
+                            </p>
+                            <p><strong class="text-indigo-900 dark:text-slate-100">Email:</strong>
+                                sandeepjobs03@gmail.com</p>
+                            <p><strong class="text-indigo-900 dark:text-slate-100">Phone:</strong> 9068693488</p>
+                            <p><strong class="text-indigo-900 dark:text-slate-100">Location:</strong> Rajeev Nagar
+                                AH-14, Bhopal, Madhya
+                                Pradesh, India</p>
+                            <div class="flex justify-center lg:justify-start gap-5 py-5">
+                                <!-- linkedin -->
+                                <a href="https://www.linkedin.com/in/sandeepyadav03/" target="_blank">
+                                    <span>
+                                        <i
+                                            class="flex items-center justify-center h-12 w-12 rounded-full border-2 border-white text-white text-xl font-thin hover:bg-white hover:text-indigo-600 transition-all duration-500 ease-linear  fa-brands fa-linkedin-in"></i>
+                                    </span>
+                                </a>
+                                <!-- instagran -->
+                                <a href="https://www.instagram.com/sandybhai0003/" target="_blank">
+                                    <span>
+                                        <i
+                                            class="flex items-center justify-center h-12 w-12 rounded-full border-2 border-white text-white text-xl font-thin hover:bg-white hover:text-indigo-600 transition-all duration-500 ease-linear fa-brands fa-instagram"></i>
+                                    </span>
+                                </a>
+                                <!-- facebook -->
+                                <a href="https://www.facebook.com/profile.php?id=100038437879933" target="_blank">
+                                    <span>
+                                        <i
+                                            class="flex items-center justify-center h-12 w-12 rounded-full border-2 border-white text-white text-xl font-thin hover:bg-white hover:text-indigo-600 transition-all duration-500 ease-linear fa-brands fa-facebook-f"></i>
+                                    </span>
+                                </a>
+                                <!-- Twitter -->
+                                <a href="https://x.com/samrat_king0003" target="_blank">
+                                    <span>
+                                        <i
+                                            class="flex items-center justify-center h-12 w-12 rounded-full border-2 border-white text-white text-xl font-thin hover:bg-white hover:text-indigo-600 transition-all duration-500 ease-linear fa-brands fa-twitter"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div
+                            class="md:w-1/2 bg-gray-800 p-6 rounded-lg dark:border-[1px] shadow-lg hover:shadow-2xl hover:scale-[1.02] transition duration-500">
+                            <form action="#" method="POST">
+                                <div class="mb-4">
+                                    <label for="name" class="block text-sm font-semibold mb-2">Name</label>
+                                    <input type="text" id="name" name="name"
+                                        class="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                                        placeholder="Your Name" required>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="email" class="block text-sm font-semibold mb-2">Email</label>
+                                    <input type="email" id="email" name="email"
+                                        class="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                                        placeholder="Your Email" required>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="message" class="block text-sm font-semibold mb-2">Message</label>
+                                    <textarea id="message" name="message" rows="4"
+                                        class="w-full p-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
+                                        placeholder="Your Message" required></textarea>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-indigo-600 hover:bg-transparent border-2 border-transparent transition duration-500 hover:border-indigo-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact Section End Here -->
+        </main>
+
+        <footer id="footer" class=" w-full px-3 md:px-10 lg:px-20 py-3 mt-2 relative ">
+            <section
+                class="h-28 bg-gradient-to-r flex flex-col justify-center border-[2px] border-indigo-500 gap-3 items-center bg-indigo-500 dark:bg-slate-900 dark:border-[1px] dark:lg:border-[2px] dark:hover:shadow-white dark:hover:shadow-md shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] text-center text-sm lg:text-base text-gray-200 rounded-lg py-1 px-4">
+                <hr class="h-[1px] rounded w-full bg-gray-200">
+                <p class="text-center">&copy; 2024 My Portfolio Website. All rights reserved.</p>
+                <div class="social-icons text-2xl">
+                    <a class="hover:text-indigo-300 mr-3 transition-all duration-300"
+                        href="https://www.linkedin.com/in/sandeepyadav03/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a class="hover:text-indigo-300 mr-3 transition-all duration-300"
+                        href="https://github.com/SandyBhai03" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="hover:text-indigo-300 mr-3 transition-all duration-300" href="#phone" target="_blank"
+                        aria-label="Phone">
+                        <i class="text-2xl font-extrabold fa-regular fa-phone"></i>
+                    </a>
+                    <a class="hover:text-indigo-300 transition-all duration-300" href="mailto:sandeepjobs03@gmail.com"
+                        aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </section>
+            <a id="backToTop" href="#home"
+                class="absolute h-10 w-10 hover:text-indigo-600 flex justify-center items-center font-bold bottom-7 md:right-12 lg:right-7 lg:bottom-11  z-50 right-5 hover:bg-white hover:scale-x-110 bg-indigo-600 text-white transform transition duration-300 rounded-full">
+                <i class="fas fa-arrow-up hover:-translate-y-2 transition-all duration-300"></i>
+            </a>
+        </footer>
+
+    </div>
+
+    <script>
+        const bdy = document.getElementById("body");
+        const darkMode = document.getElementById("dark-mode")
+
+        darkMode.addEventListener('click', () => {
+            bdy.classList.toggle('dark')
+        })
+    </script>
+</body>
+
+</html>
