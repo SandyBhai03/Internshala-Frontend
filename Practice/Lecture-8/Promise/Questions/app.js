@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Qns 1. Write a function delay(ms) that returns a Promise which resolves after (ms) milliseconds. Use this function to log "Done!" after 3 seconds.
 
 // function delay(ms){
@@ -17,9 +16,8 @@
 
 
 
-console.log("Radhey Radhey 🙏🙏🙏")
+// console.log("Radhey Radhey 🙏🙏🙏")
 
-=======
  // Q-1. Chaining Promises Create a Promise that resolves with the number 5. Chain another .then() that multiplies the result by 3, and another .then() that adds 10 to it.
 
 // function getData(){
@@ -44,4 +42,3 @@ const ob = {
     
     getData().then()
     
->>>>>>> bf00fb6caafc48a589346476273f2e34f4f76f32
