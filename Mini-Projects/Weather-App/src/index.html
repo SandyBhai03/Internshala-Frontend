@@ -28,7 +28,7 @@
       alt="background"
     />
     <div id="bg-blur"
-      class="h-full w-full bg-[rgba(255,255,255,0.2)] backdrop-blur-[12px] z-20 shadow-lg rounded-md p-5 md:p-7 lg:px-12 lg:py-8"
+      class="min-h-full w-full xl:w-1/2 lg:min-h-screen bg-[rgba(255,255,255,0.2)] backdrop-blur-[12px] z-20 shadow-lg rounded-md p-5 md:p-7 lg:px-12 lg:py-8 xl:px-20"
     >
       <!-- Header -->
       <header class="text-center bg-[#3c9efa] py-2 rounded">
@@ -46,13 +46,27 @@
             class="w-full md:w-1/2 lg:w-2/5 bg-[rgba(255,255,255,0.3)] backdrop-blur-md bg-opacity-90 shadow-md hover:shadow-lg rounded py-4 px-5"
           >
             <p class="font-semibold text-xl text-gray-800">Enter a City Name</p>
-            <form class="flex flex-col gap-4 mt-2">
-              <input
-                class="p-2 rounded border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 outline-none"
+            <form class="flex flex-col gap-4 mt-[3px]">
+              <div id="input-container"
+              class="w-full h-fit bg-white min-h-0 rounded-md"
+              >
+                <input
+                class="w-full rounded outline-none py-2 px-4"
                 id="city-input"
                 type="text"
                 placeholder="E.g., India, New York, London"
               />
+              <!-- Recent 5 days Search City Name container -->
+              <ul id="recentCities"
+              class=" min-h-0 text-sm text-gray-700 rounded-md border-gray-300 outline-none px-2">
+                <li class="mb-2 mt-1 px-2 py-1 hover:bg-slate-200 cursor-pointer rounded">radhey radhey</li>
+                <li class="mb-2 mt-1 px-2 py-1 hover:bg-slate-200 cursor-pointer rounded">radhey radhey</li>
+                <li class="mb-2 mt-1 px-2 py-1 hover:bg-slate-200 cursor-pointer rounded">radhey radhey</li>
+                <li class="mb-2 mt-1 px-2 py-1 hover:bg-slate-200 cursor-pointer rounded">radhey radhey</li>
+                <li class="mb-2 mt-1 px-2 py-1 hover:bg-slate-200 cursor-pointer rounded">radhey radhey</li>
+                
+              </ul>
+              </div>
               <button
                 class="py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-600 transition-all"
               >
@@ -73,10 +87,10 @@
           <!-- Search Section End-->
           <!-- Current Weather Info Start -->
           <article id="current-weather-card"
-            class="w-full md:w-1/2 lg:w-3/5 lg:h-64 bg-gradient-to-r from-blue-500 to-blue-300 text-white shadow-md rounded p-4 flex flex-col lg:gap-7 md:flex-row md:justify-between items-center space-y-4 md:space-y-0 md:space-x-4 lg:px-7"
+            class="w-full md:w-1/2 lg:w-3/5 md:h-64 bg-gradient-to-r from-blue-500 to-blue-300 text-white shadow-md rounded p-4 flex flex-col lg:gap-7 md:flex-row md:justify-between items-center space-y-4 md:space-y-0 md:space-x-4 lg:px-7"
           >
             <div
-              class="flex flex-col md:gap-3 text-base lg:text-2xl font-poppins font-medium"
+              class="flex flex-col md:gap-3 md:text-lg lg:text-2xl font-poppins font-medium"
             >
               <h2 class="text-xl lg:text-3xl text-nowrap font-semibold">
                 India (2024-04-23)

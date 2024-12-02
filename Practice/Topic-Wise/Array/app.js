@@ -89,13 +89,13 @@
 // console.log(processArray(arr));
 
 // practice session at 24-11-2024
-let res = nums.map((e)=>{
-  return  {name:e.toUpperCase(),l:e.length}
- })
+// let res = nums.map((e)=>{
+//   return  {name:e.toUpperCase(),l:e.length}
+//  })
 
- let res = nums.map((e)=>{
-    return  e.reduce((acc,curr)=>acc*curr)
-   })
+//  let res = nums.map((e)=>{
+//     return  e.reduce((acc,curr)=>acc*curr)
+//    })
    
    // solved in live class Questions
 
@@ -358,26 +358,46 @@ let res = nums.map((e)=>{
 // }
 // console.log(flatArr([[1,2],[3,4],[5,6]]))
 
-function groupBy(arr,prop){
-  return arr.reduce((acc,obj)=>{
-      const key = obj[prop]
-      // console.log(key)
-      if(!acc[key]){
-          acc[key] = []
-      }
-      acc[key].push(obj)
-      return acc
+// -----------------------------------------
+// # use of splice method
+//  const arr = [1, 2, 3, 4, 5];
 
-  },{})
+// // Remove elements
+// const removed = arr.splice(1, 2); // Removes 2 elements starting from index 1
+// console.log(arr); // [1, 4, 5]
+// console.log(removed); // [2, 3]
 
-}
+// // Add elements
+// arr.splice(1, 0, "a", "b"); // Adds "a" and "b" at index 1
+// console.log(arr); // [1, "a", "b", 4, 5]
 
-const arr1 = [
-  {name:'alice',age:25, location:'delhi'},
-  {name:'bob',age:15, location:'mumbai'},
-  {name:'bob',age:25, location:'delhi'},
-  {name:'bob',age:45, location:'pune'},
-  {name:'alice',age:35, location:'rajasthan'},
-  {name:'aman',age:35, location:'noida'},
-]
-console.log(groupBy(arr1,'location'))
+// // Replace elements
+// arr.splice(2, 1, "c"); // Replaces 1 element at index 2 with "c"
+// console.log(arr); // [1, "a", "c", 4, 5]
+
+
+
+// --------------------------------
+// function groupBy(arr,prop){
+//   return arr.reduce((acc,obj)=>{
+//       const key = obj[prop]
+//       // console.log(key)
+//       if(!acc[key]){
+//           acc[key] = []
+//       }
+//       acc[key].push(obj)
+//       return acc
+
+//   },{})
+
+// }
+
+// const arr1 = [
+//   {name:'alice',age:25, location:'delhi'},
+//   {name:'bob',age:15, location:'mumbai'},
+//   {name:'bob',age:25, location:'delhi'},
+//   {name:'bob',age:45, location:'pune'},
+//   {name:'alice',age:35, location:'rajasthan'},
+//   {name:'aman',age:35, location:'noida'},
+// ]
+// console.log(groupBy(arr1,'location'))
