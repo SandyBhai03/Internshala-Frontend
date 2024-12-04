@@ -282,9 +282,24 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   getCurrentWeatherData("bhopal");
   getForcastData("bhopal");
+
+  const toast = document.getElementById('toast');
+  
+  // Show the toast
+  toast.classList.remove('hidden', 'translate-y-10', 'opacity-0');
+  toast.classList.add('translate-y-0', 'opacity-100');
+
+  // Hide the toast after 5 seconds
+  setTimeout(() => {
+    toast.classList.add('translate-y-10', 'opacity-0');
+    setTimeout(() => {
+      toast.classList.add('hidden'); // Fully hide after transition
+    }, 300); // Matches the Tailwind transition duration
+  }, 2000); // Toast visible for 5 seconds
 });
+
 //-------------------------
-// GSAP Animation function
+//GSAP Animation function
 
 function customAnimate() {
   const tl = gsap.timeline();
