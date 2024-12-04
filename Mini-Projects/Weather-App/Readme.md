@@ -46,6 +46,6 @@ cd Weather-App
 2. The app will display the current temperature, humidity, wind speed, and an icon representing the current weather.
 
 
-![Weather App Screenshot](./images/view1.png "Weather App Screenshot")
-![Weather App Screenshot](./images/view2.png "Weather App Screenshot")
+![Weather App Screenshot](public/images/view1.png "Weather App Screenshot")
+![Search Functionality](public/images/view2.png "Weather App Search Functionality")
 
