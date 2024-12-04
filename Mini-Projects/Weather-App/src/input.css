@@ -10,7 +10,7 @@
         height: 0;
         overflow: hidden;
         transition: all;
-        transition-duration: 3s;
+        transition-duration: 1s;
         transition-timing-function: ease-in;
       }
     

@@ -12,6 +12,9 @@ module.exports = {
         poppins:['Poppins', 'sans-serif'],
         nunito:['Nunito', 'sans-serif'],
       },
+      screens: {
+        '3xl': '1800px'
+      },
     },  
   },
   plugins: [],
