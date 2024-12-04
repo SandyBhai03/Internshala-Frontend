@@ -10,12 +10,6 @@ const cityInput = document.getElementById("city-input");
 // Variables to store recent searches
 let recentCities = JSON.parse(localStorage.getItem("recentCities")) || [];
 
-// On Page Load: Load and Render Recent Cities
-document.addEventListener('DOMContentLoaded', () => {
-  const storedCities = JSON.parse(localStorage.getItem('recentCities')) || [];
-  renderRecentCities(storedCities);
-});
-
 // Function Update recent cities dropdown
 function updateRecentCities(city) {
   if (!recentCities.includes(city)) {
@@ -66,7 +60,6 @@ function displayCurrentWeatherData(data) {
   console.log(data)
   // Convert the Unix timestamp to a JavaScript Date object
   const date = new Date(data.dt * 1000);
-
   // Extract day, month, and year
   const day = String(date.getDate()).padStart(2, "0"); // Add leading zero if needed
   const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based, so add 1
@@ -112,6 +105,7 @@ function setImages(data) {
 
 // function to Display Forecast data
 function displayForecastData(data) {
+  console.log(data.list)
   const forecastWeatherData = data.list
     .filter((_, index) => index % 7 === 2)
     .slice(1); // Start from the 2nd day data
@@ -182,26 +176,6 @@ async function getCurrentWeatherData(city) {
   }
 }
 
-// Function to clear wheather display
-function clearWeatherDisplay() {
-  // Clear current weather data
-  document.getElementById("city-name").innerText = "";
-  document.getElementById("curr-temp").innerText = "";
-  document.getElementById("curr-wind").innerText = "";
-  document.getElementById("curr-humi").innerText = "";
-  document.getElementById("curr-date").innerText = "";
-  currWeatherImg.src = ""; // Reset the weather image
-
-  // Clear forecast cards
-  forecastCards.forEach(card => {
-    card.querySelector("#forDate").innerText = "";
-    card.querySelector("#forTemp").innerText = "";
-    card.querySelector("#forWind").innerText = "";
-    card.querySelector("#forHumi").innerText = "";
-    card.querySelector("#forImg").src = "";
-  });
-}
-
 // Function to fetch Forecast Weather Data By City Name
 async function getForcastData(city) {
   try {
@@ -244,6 +218,26 @@ function getForecastWeatherDataByLocation(lat, lon) {
     });
 }
 
+// Function to clear wheather display
+function clearWeatherDisplay() {
+  // Clear current weather data
+  document.getElementById("city-name").innerText = "";
+  document.getElementById("curr-temp").innerText = "";
+  document.getElementById("curr-wind").innerText = "";
+  document.getElementById("curr-humi").innerText = "";
+  document.getElementById("curr-date").innerText = "";
+  currWeatherImg.src = ""; // Reset the weather image
+
+  // Clear forecast cards
+  forecastCards.forEach(card => {
+    card.querySelector("#forDate").innerText = "";
+    card.querySelector("#forTemp").innerText = "";
+    card.querySelector("#forWind").innerText = "";
+    card.querySelector("#forHumi").innerText = "";
+    card.querySelector("#forImg").src = "";
+  });
+}
+
 // Add addEventListener on Search button
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -278,6 +272,17 @@ searchByLocation.addEventListener("click", (e) => {
   }
 });
 
+// On Page Load: Load and Render Recent Cities
+document.addEventListener('DOMContentLoaded', () => {
+  const storedCities = JSON.parse(localStorage.getItem('recentCities')) || [];
+  renderRecentCities(storedCities);
+});
+
+// get Weather data and Forecast data on Loeaded Browser
+document.addEventListener('DOMContentLoaded', () => {
+  getCurrentWeatherData("bhopal");
+  getForcastData("bhopal");
+});
 //-------------------------
 // GSAP Animation function
 
@@ -310,3 +315,4 @@ function customAnimate() {
   });
 }
 customAnimate();
+
