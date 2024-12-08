@@ -246,7 +246,7 @@ searchBtn.addEventListener("click", (e) => {
   if (cityInputValue !== "") {
     getCurrentWeatherData(cityInputValue);
     getForcastData(cityInputValue);
-    cityInputValue = ""
+    cityInput.value = ""
   } else {
     displayError("Please enter a valid city name.");
     return;
