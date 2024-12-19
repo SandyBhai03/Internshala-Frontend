@@ -378,6 +378,7 @@
 
 
 // --------------------------------
+// Q. create array collection of object according to same Location city
 // function groupBy(arr,prop){
 //   return arr.reduce((acc,obj)=>{
 //       const key = obj[prop]
@@ -401,3 +402,4 @@
 //   {name:'aman',age:35, location:'noida'},
 // ]
 // console.log(groupBy(arr1,'location'))
+
