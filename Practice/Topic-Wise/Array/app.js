@@ -1,3 +1,6 @@
+// const arr = [10,20,30,40,50,60];
+// console.log(arr.__proto__.__proto__.__proto__ ===  null)
+
 // Q-1. Sort the given array in Ascending order
 
 // function ascendingAray(arr){
@@ -377,7 +380,7 @@
 
 
 
-// --------------------------------
+// -----------------------------------------------------
 // Q. create array collection of object according to same Location city
 // function groupBy(arr,prop){
 //   return arr.reduce((acc,obj)=>{
@@ -390,7 +393,6 @@
 //       return acc
 
 //   },{})
-
 // }
 
 // const arr1 = [
@@ -403,3 +405,43 @@
 // ]
 // console.log(groupBy(arr1,'location'))
 
+// -------$-------#-------$-------#-------$-------#-------$-------
+// Q. Sort Array elements according to their types in new Array 
+
+//          ~~~~~~~~~~ callbacks function ~~~~~~~~~~~~
+// function getString(item){
+//    return typeof item === "string"
+// }
+// function getBoolean(item){
+//    return typeof item === "boolean"
+// }
+// function getNumber(item){
+//    return typeof item === "number"
+// }
+
+// function checkTypeOf(arr, fn){
+//    const result = []
+//    for(let item of arr){
+//       if(fn(item)){
+//          result.push(item)
+//       }
+//    }
+//    return result;
+// }
+
+// const arr = ["KingSahab", true, 1, "Yadav", false, 2];
+
+// console.log(checkTypeOf(arr, getString))
+// console.log(checkTypeOf(arr, getBoolean))
+// console.log(checkTypeOf(arr, getNumber))
+
+//          ~~~~~~~~~~~~ Another way to write it ~~~~~~~~~~~~
+
+// function checkTypeOf(arr, condition){
+//    return arr.filter(elem => typeof(elem)===condition)
+// }
+
+// const arr = ["KingSahab", true, 1, "Yadav", false, 2];
+// console.log(checkTypeOf(arr, 'string'));
+// console.log(checkTypeOf(arr, 'number'));
+// console.log(checkTypeOf(arr, 'boolean'))
