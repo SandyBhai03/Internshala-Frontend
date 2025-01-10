@@ -168,7 +168,7 @@
 
 // console.log(getSqSum([1,2,3,4,5]))
 
-
+// ~~~~~~~~~~~~~~~~ Find User Name ~~~~~~~~~~~~~~~~~~~~
 // function getUserName(arr){
 //     return arr.filter(obj=>obj.age>=18).map(obj=>obj.name)
 // }
@@ -181,7 +181,7 @@
 // ]
 // console.log(getUserName(arr))
 
-
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // function getChunk(arr,key){
 //     let res = []
 //     for(let i=0;i<arr.length;i+=key){
@@ -198,7 +198,7 @@
 
 // }
 // console.log(getCommon([1,2,3,43,5],[1,2,3,5,6,7,8]))
-
+// ~~~~~~~~~~~~~~~ Find the Frequency of all the elements
 // function getFreq(arr){
 //     let freq = {}
 //     for(let num of arr){
@@ -225,7 +225,7 @@
 
 // console.log(getFreq([1,2,3,4,5,6,7,8,9,1,2,3,4,5,6]))
 
-
+// ~~~~~~~~~~~~~~~~~   ~~~~~~~~~~~~~~~~~~~~
 
 // let arr = [1,[2],[3,[4],[7,[8,[9]]]],5]
 
@@ -445,3 +445,31 @@
 // console.log(checkTypeOf(arr, 'string'));
 // console.log(checkTypeOf(arr, 'number'));
 // console.log(checkTypeOf(arr, 'boolean'))
+
+// ~~~~~~~~~ Find 1st & 2nd Max ~~~~~~~~~~~
+
+// const find1stAnd2ndMaxAndMin  = function(nums){
+//    let max = -Infinity;
+//    let sMax = -Infinity;
+//    let min = Infinity;
+//    let sMin = Infinity;
+//    for(let num of nums){
+//       if(num > max){
+//          max = num
+//       } else if(num > sMax && num < max){
+//          sMax = num
+//       } 
+//        if(num < min){
+//          min = num;
+//       } else if( num > min && num < sMin ){
+//          sMin = num;
+//       }
+//    }
+//    return `MAX is= ${max}, Second MAX is= ${sMax}, MIN is = ${min}, & Second MIN = ${sMin}`
+// }
+
+// const arr = [1, 5, 9, 44, 43.9, 11];
+
+// console.log(find1stAnd2ndMaxAndMin(arr));
+
+

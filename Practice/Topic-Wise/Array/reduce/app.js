@@ -1,5 +1,19 @@
 // ----------- Reduce Method ------------------------
 
+// ~~~~~~~~~~~ Create Custom Reduce Function~~~~~~~~~~~
+const customReduce = (arr, cb, initialValue)=> {
+    let accumulator = initialValue !== undefined ? initialValue : arr[0];
+    let startIndex = initialValue !== undefined ? 0 : 1;
+
+  for (let i = startIndex; i < arr.length; i++) {
+    accumulator = callback(accumulator, arr[i], i, arr);
+  }
+
+  return accumulator;
+};
+
+// ==============================================
+
 // Q. sum of all the numbers
 
 // const arr = [1,2,3,4,5]
@@ -165,4 +179,60 @@
 // }, {});
 
 // console.log(count);
-// // Output: { apple: 3, banana: 2, orange: 1 }
+//
+ //// Output: { apple: 3, banana: 2, orange: 1 }
+
+
+ 
+
+ // =====================================================
+ // ~~~~~~ Remove All Adjacent Duplicates In String ~~~~~~~~~~
+
+ var removeDuplicates = function(s) {
+  class Stack{
+      constructor(length){
+     this.size= length-1
+     this.top=-1;
+     this.stackArr=[]
+      }
+  
+      push(data){
+          if(this.top<this.size){
+              this.top++
+              this.stackArr[this.top]=data
+          }
+      }
+      pop(){
+          if(this.top>=0){
+              let x = this.stackArr[this.top]
+              this.top--
+              return x
+          }
+      }
+      isEmpty(){
+          return this.top==-1
+      }
+  
+      peek(){
+          return this.stackArr[this.top]
+      }
+  }
+  
+       let new_s=""
+     let ola = new Stack(s.length)
+     ola.push(s[0])
+  
+     for(let i=1;s.length>i;i++){
+     if(ola.peek()==s[i]){
+      ola.pop()
+     }
+     else{
+      ola.push(s[i])
+     }
+     }
+  
+     while(!ola.isEmpty()){
+      new_s=ola.pop()+new_s
+     }
+     return new_s
+  };
